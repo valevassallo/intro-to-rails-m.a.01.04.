@@ -1,0 +1,26 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @member.name %>
+</p>
+
+<p>
+  <strong>Phone number:</strong>
+  <%= @member.phone_number %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @member.address %>
+</p>
+
+<strong>Rents:</strong>
+<ul>
+  <% @member.rents.each do |rent| %>
+    <li><%= link_to rent.cassette.movie.title, rent.cassette %></li>
+  <% end %>
+</ul>
+
+<%= link_to 'Edit', edit_member_path(@member) %> |
+<%= link_to 'Back', members_path %>

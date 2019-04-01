@@ -1,0 +1,26 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @actor.name %>
+</p>
+
+<p>
+  <strong>Real name:</strong>
+  <%= @actor.real_name %>
+</p>
+
+<p>
+  <strong>Birth date:</strong>
+  <%= @actor.birth_date %>
+</p>
+
+<strong>Movies starring in:</strong>
+<ul>
+  <% @actor.casts.each do |cast| %>
+    <li><%= link_to cast.movie.title, cast.movie %></li>
+  <% end %>
+</ul>
+
+<%= link_to 'Edit', edit_actor_path(@actor) %> |
+<%= link_to 'Back', actors_path %>

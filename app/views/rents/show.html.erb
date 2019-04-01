@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Cassette:</strong>
+  <%= link_to @rent.cassette.movie.title, @rent.cassette %>
+</p>
+
+<p>
+  <strong>Member:</strong>
+  <%= link_to @rent.member.name, @rent.member %>
+</p>
+
+<p>
+  <strong>Start rent:</strong>
+  <%= @rent.start_rent %>
+</p>
+
+<p>
+  <strong>End rent:</strong>
+  <%= @rent.end_rent %>
+</p>
+
+<%= link_to 'Edit', edit_rent_path(@rent) %> |
+<%= link_to 'Back', rents_path %>
